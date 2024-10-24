@@ -1,0 +1,45 @@
+{% extends 'bboard/base.html' %}
+
+{% block create_title %}
+Добавление Объявления - Доска Объявлений 
+
+{% endblock  %}
+
+  {% block forma %}
+  <div class="col-4 coll">
+    <h2 class="text-center text-light">Добавления Объявления</h2>
+      <form method="post">
+      {% csrf_token %}
+        <div>
+          <label for="title" class="text-light">Название</label><br>   
+          {{ form.title }}
+        </div>
+                
+        <div> 
+          <label for="title" class="text-light">Описание</label><br>    
+          {{ form.content }}
+        </div>
+                
+        <div> 
+          <label for="title" class="text-light">Ценна</label><br>    
+          {{ form.price }}
+        </div>
+                
+        <div>
+          <label for="title" class="text-light">Рубрика</label><br>     
+          {{ form.rubric }}
+        </div>
+        <div class="botton">
+          <input type="submit" class="btn btn-primary" value="Добавлять">
+        </div>
+      </form>
+    </div>
+  </div>
+     
+
+   
+
+  
+  {% endblock %}
+</div>
+

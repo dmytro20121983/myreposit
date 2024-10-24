@@ -1,0 +1,24 @@
+ {% block body3 %}
+        <div class="row coll_row">
+          <div class="col-xl-12"> 
+            <ul class="nav justify-content-end">
+              <div class="col-xl-3 col-md-6 col-sm-12">
+              <li class="nav-item">
+                  <a  class="nav-link text-light" aria-current=" page" href="/bboard/">Главная</a>
+              </li></div>
+                  <br>
+                  <div class="col-xl-3 col-md-6 col-sm-12 nw">
+                  <li class="nav-item">
+                  <a class="nav-link text-light" href="{% url 'bboard:add' %}"> Добавить</a>
+                  </li></div>
+
+                                    
+                  {% for rubric in rubrics %}
+                            
+                  <div class="col-xl-3 col-md-6 col-sm-12 nw">  
+                  <a class="nav-link active text-light" aria-current="page" href="{% url 'bboard:by_rubric' rubric.pk %}">{{ rubric.name }}</a>
+                  <br></div>
+                  {% endfor %}
+            </ul>
+            </div>
+        </div>{% endblock %}

@@ -1,0 +1,27 @@
+{% extends 'bboard/base.html' %} 
+
+{% block create_title %}
+{{curent_rubric.name}}
+{% endblock %}
+    {% block ob %}
+    <h2 class="text-center">Объявления</h2>
+      
+        {% endblock %}
+{% block content %}
+<div class="ol-lg-5 col-sm-5 col-md-5 col-xl-5  coll">
+    <h2>Рубрика: {{curent_rubric.name}}</h2>
+{% for bb in bbs %}
+        <h2>{{bb.title}}</h2>
+        <p>{{bb.content}}</p>
+        <p><a href="{% url 'bboard:by_rubric' bb.pk %}"> {{bb.rubric.name}}</a></p>
+        <p>{{bb.published | date:"j.m.Y H:i:s"}}</p>
+      
+{% endfor %}
+</div>     
+{% endblock %}
+
+       
+      
+
+
+      
